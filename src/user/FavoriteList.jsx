@@ -229,46 +229,41 @@ const Section = ({
   getCurrentItems,
   onErrorImg,
 }) => {
-  const itemsPerPage = 4;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const itemsPerPage = windowWidth < 640 ? 1 : 4;
   const maxPage = Math.ceil(data.length / itemsPerPage) - 1;
+
+  const currentItems = (() => {
+    const start = page * itemsPerPage;
+    return data.slice(start, start + itemsPerPage);
+  })();
 
   return (
     <div className="mb-8">
       <h2 className="text-xl font-semibold mb-4">
         {title} ({data.length})
       </h2>
-      <div className="relative px-8 h-[265px]">
+      <div className="relative px-4">
         {data.length === 0 ? (
-          <div className="h-full flex items-center justify-center">
+          <div className="flex items-center justify-center min-h-[200px]">
             <p className="text-center text-gray-500">
               즐겨찾기한 항목이 없습니다.
             </p>
           </div>
         ) : (
-          <>
-            {data.length > itemsPerPage && (
-              <>
-                <button
-                  onClick={() => onPageChange(-1, type)}
-                  disabled={page === 0}
-                  className="absolute left-10 top-1/2 -translate-y-1/2 z-10 border rounded-full p-2 hover:bg-gray-200 flex items-center justify-center cursor-pointer"
-                >
-                  <IoIosArrowBack size={24} />
-                </button>
-                <button
-                  onClick={() => onPageChange(1, type)}
-                  disabled={page >= maxPage}
-                  className="absolute right-10 top-1/2 -translate-y-1/2 z-10 border rounded-full p-2 hover:bg-gray-200 flex items-center justify-center cursor-pointer"
-                >
-                  <IoIosArrowForward size={24} />
-                </button>
-              </>
-            )}
-            <div className="flex gap-6 justify-center h-full items-center">
-              {getCurrentItems(data, page).map((item, idx) => (
+          <div className="flex flex-col items-center w-full">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {currentItems.map((item, idx) => (
                 <div
                   key={`${page}-${idx}`}
-                  className="relative p-4 bg-white rounded-lg shadow cursor-pointer w-[280px] animate-slide-from-left border border-gray-200"
+                  className="w-full p-4 bg-white rounded-lg shadow cursor-pointer animate-slide-from-left border border-gray-200"
                   style={{
                     animationDelay: `${idx * 150}ms`,
                     opacity: 0,
@@ -289,7 +284,7 @@ const Section = ({
                           : item.festivalname
                       }
                       onError={onErrorImg}
-                      className="h-[180px] w-[250px] object-cover transition-transform duration-300 hover:scale-110"
+                      className="w-full h-[180px] object-cover transition-transform duration-300 hover:scale-110"
                     />
                     <button
                       onClick={(e) => {
@@ -316,7 +311,29 @@ const Section = ({
                 </div>
               ))}
             </div>
-          </>
+
+            {data.length > 1 && (
+              <div className="flex justify-center gap-4 mt-6">
+                <button
+                  onClick={() => onPageChange(-1, type)}
+                  disabled={page === 0}
+                  className="border rounded-full p-2 hover:bg-gray-200 flex items-center justify-center cursor-pointer"
+                >
+                  <IoIosArrowBack size={24} />
+                </button>
+                <span className="flex items-center">
+                  {page + 1} / {maxPage + 1}
+                </span>
+                <button
+                  onClick={() => onPageChange(1, type)}
+                  disabled={page >= maxPage}
+                  className="border rounded-full p-2 hover:bg-gray-200 flex items-center justify-center cursor-pointer"
+                >
+                  <IoIosArrowForward size={24} />
+                </button>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>
