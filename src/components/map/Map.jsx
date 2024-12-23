@@ -135,21 +135,26 @@ const Map = ({ selectedLocation }) => {
                 padding: 0;
                 margin: 0;
                 max-width: 350px;
+                max-height: 250px;
                 font-family: 'Noto Sans KR', sans-serif;
               ">
                 ${heritageGroup
                   .map(
                     (heritage) => `
-                  <div style="border-bottom: 1px solid #eee; padding: 10px 0;">
+                  <div style="border-bottom: 1px solid #eee; padding: 10px 0;
+                  ">
                     ${
                       heritage.imageUrl
                         ? `<div style="
-                          width: 100%;
-                          height: 250px;
-                          margin: 0;
+                          width: 80%;
+                          height: 200px;
+                          margin: 0 auto;
                           padding: 0;
                           overflow: hidden;
                           border-radius: 8px 8px 0 0;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
                         ">
                           <img 
                             src="${heritage.imageUrl}" 
