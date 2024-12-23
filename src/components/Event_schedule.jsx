@@ -431,7 +431,7 @@ const EventSchedule = () => {
                             </div>
 
                             <div className="flex flex-col lg:flex-row gap-4 mb-4">
-                              <div className="lg:max-w-56 w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[180px]">
+                              <div className="lg:max-w-56 w-full h-[200px] sm:h-[250px] md:h-[400px] lg:h-[180px]">
                                 <img
                                   src={
                                     festival.image && festival.image !== "N/A"
