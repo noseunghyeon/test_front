@@ -259,60 +259,83 @@ const Section = ({
           </div>
         ) : (
           <div className="flex flex-col items-center w-full">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {currentItems.map((item, idx) => (
-                <div
-                  key={`${page}-${idx}`}
-                  className="w-full p-4 bg-white rounded-lg shadow cursor-pointer animate-slide-from-left border border-gray-200"
-                  style={{
-                    animationDelay: `${idx * 150}ms`,
-                    opacity: 0,
-                    animation: `slideIn 0.5s ease-out ${idx * 150}ms forwards`,
-                  }}
-                  onClick={() => onOpenModal(item, type)}
-                >
-                  <div className="relative overflow-hidden rounded">
-                    <img
-                      src={
-                        type === "heritage"
-                          ? item.heritageimageurl || default_Img
-                          : item.festivalimageurl || default_Img
-                      }
-                      alt={
-                        type === "heritage"
+            <div className="relative w-full">
+              {data.length > 1 && windowWidth >= 1024 && (
+                <>
+                  <button
+                    onClick={() => onPageChange(-1, type)}
+                    disabled={page === 0}
+                    className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 border rounded-full p-2 hover:bg-gray-200 items-center justify-center cursor-pointer"
+                  >
+                    <IoIosArrowBack size={24} />
+                  </button>
+                  <button
+                    onClick={() => onPageChange(1, type)}
+                    disabled={page >= maxPage}
+                    className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 border rounded-full p-2 hover:bg-gray-200 items-center justify-center cursor-pointer"
+                  >
+                    <IoIosArrowForward size={24} />
+                  </button>
+                </>
+              )}
+
+              <div className="w-full xl:w-[1300px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4 mx-auto">
+                {currentItems.map((item, idx) => (
+                  <div
+                    key={`${page}-${idx}`}
+                    className="w-full p-4 bg-white rounded-lg shadow cursor-pointer animate-slide-from-left border border-gray-200"
+                    style={{
+                      animationDelay: `${idx * 150}ms`,
+                      opacity: 0,
+                      animation: `slideIn 0.5s ease-out ${
+                        idx * 150
+                      }ms forwards`,
+                    }}
+                    onClick={() => onOpenModal(item, type)}
+                  >
+                    <div className="relative overflow-hidden rounded">
+                      <img
+                        src={
+                          type === "heritage"
+                            ? item.heritageimageurl || default_Img
+                            : item.festivalimageurl || default_Img
+                        }
+                        alt={
+                          type === "heritage"
+                            ? item.heritagename
+                            : item.festivalname
+                        }
+                        onError={onErrorImg}
+                        className="w-full h-[180px] object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onRemove(item, type);
+                        }}
+                        className="absolute bottom-2 left-2 text-yellow-400 hover:text-yellow-500"
+                      >
+                        <AiFillStar className="text-2xl" />
+                      </button>
+                    </div>
+                    <div className="mt-2">
+                      <h3 className="font-semibold truncate">
+                        {type === "heritage"
                           ? item.heritagename
-                          : item.festivalname
-                      }
-                      onError={onErrorImg}
-                      className="w-full h-[180px] object-cover transition-transform duration-300 hover:scale-110"
-                    />
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onRemove(item, type);
-                      }}
-                      className="absolute bottom-2 left-2 text-yellow-400 hover:text-yellow-500"
-                    >
-                      <AiFillStar className="text-2xl" />
-                    </button>
+                          : item.festivalname}
+                      </h3>
+                      <p className="text-sm text-gray-600 mt-3 truncate">
+                        {type === "heritage"
+                          ? item.heritageaddress || "주소 정보 없음"
+                          : item.festivallocation || "주소 정보 없음"}
+                      </p>
+                    </div>
                   </div>
-                  <div className="mt-2">
-                    <h3 className="font-semibold truncate">
-                      {type === "heritage"
-                        ? item.heritagename
-                        : item.festivalname}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-3 truncate">
-                      {type === "heritage"
-                        ? item.heritageaddress || "주소 정보 없음"
-                        : item.festivallocation || "주소 정보 없음"}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {data.length > 1 && (
+            {data.length > 1 && windowWidth < 1024 && (
               <div className="flex justify-center gap-4 mt-6">
                 <button
                   onClick={() => onPageChange(-1, type)}
