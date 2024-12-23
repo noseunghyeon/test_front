@@ -5,7 +5,7 @@ export const fetchFavorites = createAsyncThunk(
   "favorites/fetchFavorites",
   async (token, { rejectWithValue }) => {
     try {
-      const response = await fetch("https://localhost:8000/pgdb/favoritelist", {
+      const response = await fetch("http://localhost:8000/pgdb/favoritelist", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -58,7 +58,7 @@ export const addFavorites = createAsyncThunk(
       // console.log("Adding favorite with token:", token);
       // console.log("Favorite ID:", favoriteId, "Type:", type);
 
-      const response = await fetch("https://localhost:8000/pgdb/favoritelist", {
+      const response = await fetch("http://localhost:8000/pgdb/favoritelist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ export const deleteFavorites = createAsyncThunk(
       // console.log("Deleting favorite with token:", token);
       // console.log("Favorite ID:", favoriteId, "Type:", type);
 
-      const response = await fetch("https://localhost:8000/pgdb/favoritelist", {
+      const response = await fetch("http://localhost:8000/pgdb/favoritelist", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

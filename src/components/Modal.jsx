@@ -27,13 +27,13 @@ const Modal = ({ item, onClose, onFavoriteChange }) => {
 
       if (!isFavorite) {
         await axios.post(
-          "https://localhost:8000/pgdb/favoritelist",
+          "http://localhost:8000/pgdb/favoritelist",
           { id: item.heritageid, type: "heritage" },
           { headers: { Authorization: `Bearer ${token}` } }
         );
         dispatch(addFavorite({ type: "heritage", data: item }));
       } else {
-        await axios.delete("https://localhost:8000/pgdb/favoritelist", {
+        await axios.delete("http://localhost:8000/pgdb/favoritelist", {
           headers: { Authorization: `Bearer ${token}` },
           data: { id: item.heritageid, type: "heritage" },
         });
