@@ -6,3 +6,6 @@ gisul stack
 
 
 documents
+
+팀 작업 구상 
+![image](https://github.com/user-attachments/assets/616dc99b-293b-48af-8fbe-c7f1e390680c)
