@@ -135,6 +135,7 @@ const Map = ({ selectedLocation }) => {
                 padding: 0;
                 margin: 0;
                 max-width: 350px;
+                max-height: 350px;
                 font-family: 'Noto Sans KR', sans-serif;
               ">
                 ${heritageGroup
@@ -296,7 +297,7 @@ const Map = ({ selectedLocation }) => {
 
   return (
     <div>
-      <div className="map-loading-error-container fixed z-[9999] w-[80%] bg-white">
+      <div className="map-loading-error-container fixed z-[9999] w-[100%] bg-white opacity-80 sm:w-[80%]">
         {isLoading && (
           <div className="SubFont text-center p-[20px]">
             지도를 불러오는 중...
