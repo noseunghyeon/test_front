@@ -382,17 +382,17 @@ const EventSchedule = () => {
                   currentItems.map((festival, index) => (
                     <li
                       key={`${festival.programName}-${index}`}
-                      className="my-3 md:my-5 flex items-center opacity-0 animate-[slideDown_0.3s_ease-out_forwards]"
+                      className="my-3 md:my-5 flex items-center opacity-0 animate-[slideDown_0.3s_ease-out_forwards] cursor-pointer sm:cursor-default"
                       style={{ animationDelay: `${index * 0.05}s` }}
                     >
                       <div className="border p-4 rounded-lg transition-colors w-full">
-                        <div className="flex items-start">
+                        <div className="flex items-start pr-5 sm:pr-0">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               handleStarClick(festival);
                             }}
-                            className={`star-button mr-2 sm:mr-3 ${
+                            className={`star-button mr-2 sm:mr-3 p-0 flex items-center ${
                               isEventStarred(festival.festivalid)
                                 ? "text-yellow-400"
                                 : "text-gray-300"
@@ -406,23 +406,25 @@ const EventSchedule = () => {
                           >
                             <TiStarFullOutline className="text-2xl sm:text-3xl" />
                           </button>
-
                           <div className="flex-1">
-                            <div className="flex justify-between items-center mb-2">
-                              <h3 className="MainFont text-xl sm:text-2xl">
+                            <div className="flex justify-between items-center mb-2 gap-2">
+                              <h3 className="MainFont text-sm sm:text-xl lg:text-2xl">
                                 {festival.programName}
                               </h3>
                               <button
-                                className="border-2 border-blue-800 rounded-md
-                                           hover:bg-blue-800 hover:text-white
-                                          text-sm sm:text-base lg:text-lg
-                                          px-2 sm:px-3 lg:px-4
-                                          py-1 sm:py-1.5 lg:py-2
-                                          transition-all duration-300 ease-in-out
-                                          shadow-sm hover:shadow-md
-                                          text-center text-nowrap
-                                          font-bold"
-                                onClick={() => handleEventClick(festival)}
+                                className="border sm:border-2 border-blue-800 rounded-md
+                                         hover:bg-blue-800 hover:text-white
+                                         text-xs sm:text-base lg:text-lg
+                                         px-1.5 sm:px-3 lg:px-4
+                                         py-0.5 sm:py-1.5 lg:py-2
+                                         transition-all duration-300 ease-in-out
+                                         shadow-sm hover:shadow-md
+                                         text-center text-nowrap
+                                         font-bold"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleEventClick(festival);
+                                }}
                               >
                                 더보기
                               </button>
