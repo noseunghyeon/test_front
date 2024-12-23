@@ -22,7 +22,7 @@ class ActionProvider {
         messages: [...prevState.messages, loadingMessage],
       }));
 
-      const response = await fetch("https://back.seunghyeon.site/chat", {
+      const response = await fetch("https://localhost:8000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

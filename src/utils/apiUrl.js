@@ -1,4 +1,5 @@
-const rootPath = "https://back.seunghyeon.site/";
+const rootPath = "https://localhost:8000/";
+// const rootPath = "https://localhost:8000/";
 
 const GET_HERITAGE_API_URL = `${rootPath}/heritage`;
 const GET_FESTIVAL_API_URL = `${rootPath}/festival`;
