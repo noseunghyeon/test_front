@@ -135,9 +135,6 @@ const Map = ({ selectedLocation }) => {
                 padding: 0;
                 margin: 0;
                 max-width: 350px;
-
-                max-height: 250px;
-
                 font-family: 'Noto Sans KR', sans-serif;
               ">
                 ${heritageGroup
@@ -148,7 +145,7 @@ const Map = ({ selectedLocation }) => {
                     ${
                       heritage.imageUrl
                         ? `<div style="
-                          width: 80%;
+                          width: 100%;
                           height: 200px;
                           margin: 0 auto;
                           padding: 0;

@@ -245,7 +245,7 @@ const EventSchedule = () => {
         <div className="bg-white min-h-[410px] rounded-lg shadow-md p-6 mb-8">
           <div className="xl:flex xl:flex-row flex-col justify-between items-start gap-6">
             <div
-              className="xl:w-1/2 w-full flex flex-wrap justify-center sm:justify-start items-center 
+              className="xl:w-1/2 w-full flex flex-wrap justify-center sm:justify-start items-center
                           sm:ml-4 gap-2 sm:gap-4 xl:mt-[6.25rem] mt-4"
             >
               <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 ">
@@ -316,10 +316,10 @@ const EventSchedule = () => {
                 onClick={closeError}
               />
               <div
-                className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                           bg-[#e2e2e2] text-black p-4 md:p-5 rounded-lg z-[10000] 
+                className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                           bg-[#e2e2e2] text-black p-4 md:p-5 rounded-lg z-[10000]
                            w-[90%] md:w-[400px] max-w-[400px]
-                           h-[180px] md:h-[200px] 
+                           h-[180px] md:h-[200px]
                            flex flex-col justify-center items-center text-center"
                 role="alert"
               >
@@ -353,10 +353,10 @@ const EventSchedule = () => {
                 onClick={closeSuccessMessage}
               />
               <div
-                className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                           bg-[#e2e2e2] text-black p-4 md:p-5 rounded-lg z-[10000] 
+                className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                           bg-[#e2e2e2] text-black p-4 md:p-5 rounded-lg z-[10000]
                            w-[90%] md:w-[400px] max-w-[400px]
-                           h-[150px] md:h-[170px] 
+                           h-[150px] md:h-[170px]
                            flex flex-col justify-center items-center text-center"
                 role="alert"
                 onClick={(e) => e.stopPropagation()}
@@ -445,8 +445,8 @@ const EventSchedule = () => {
                                 />
                               </div>
                               <div className="flex-1">
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-4">
-                                  <div className=" p-2 sm:p-3 rounded-lg">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 sm:gap-4">
+                                  <div className="p-1 sm:p-3 rounded-lg">
                                     <p className="SubFont text-base sm:text-lg">
                                       <span className="font-medium mr-2">
                                         행사 내용:
@@ -454,7 +454,7 @@ const EventSchedule = () => {
                                       {formatValue(festival.programContent)}
                                     </p>
                                   </div>
-                                  <div className=" p-2 sm:p-3 rounded-lg">
+                                  <div className="p-1 sm:p-3 rounded-lg">
                                     <p className="SubFont text-base sm:text-lg">
                                       <span className="font-medium mr-2">
                                         기간:
@@ -463,7 +463,7 @@ const EventSchedule = () => {
                                       {formatValue(festival.endDate)}
                                     </p>
                                   </div>
-                                  <div className=" p-2 sm:p-3 rounded-lg">
+                                  <div className="p-1 sm:p-3 rounded-lg">
                                     <p className="SubFont text-base sm:text-lg">
                                       <span className="font-medium mr-2">
                                         장소:
@@ -471,7 +471,7 @@ const EventSchedule = () => {
                                       {formatValue(festival.location)}
                                     </p>
                                   </div>
-                                  <div className=" p-2 sm:p-3 rounded-lg">
+                                  <div className="p-1 sm:p-3 rounded-lg">
                                     <p className="SubFont text-base sm:text-lg">
                                       <span className="font-medium mr-2">
                                         대상:
@@ -479,7 +479,7 @@ const EventSchedule = () => {
                                       {formatValue(festival.targetAudience)}
                                     </p>
                                   </div>
-                                  <div className=" p-2 sm:p-3 rounded-lg lg:col-span-2">
+                                  <div className="p-1 sm:p-3 rounded-lg lg:col-span-2">
                                     <p className="SubFont text-base sm:text-lg">
                                       <span className="font-medium mr-2">
                                         문의:
