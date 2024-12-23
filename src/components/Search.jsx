@@ -381,7 +381,7 @@ const SearchPage = () => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className={`min-w-[40px] px-2 py-1 text-sm rounded-md ${
+                className={`min-w-[40px] px-2 py-1 text-xs rounded-md sm:text-sm ${
                   currentPage === 1
                     ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                     : "bg-white border border-gray-300 hover:bg-gray-100"
