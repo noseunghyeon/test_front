@@ -390,7 +390,7 @@ const SearchPage = () => {
                 이전
               </button>
 
-              <div className="flex gap-2 p-2">
+              <div className="flex gap-1 p-1 sm:gap-2 sm:p-2">
                 {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                   let pageNum;
                   if (totalPages <= 5) {
@@ -422,7 +422,7 @@ const SearchPage = () => {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className={`min-w-[40px] px-2 py-1 text-sm rounded-md ${
+                className={`min-w-[40px] px-2 py-1 text-xs rounded-md sm:text-sm ${
                   currentPage === totalPages
                     ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                     : "bg-white border border-gray-300 hover:bg-gray-200"
