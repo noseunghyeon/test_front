@@ -431,7 +431,7 @@ const EventSchedule = () => {
                             </div>
 
                             <div className="flex flex-col lg:flex-row gap-4 mb-4">
-                              <div className="lg:max-w-56 w-full h-[200px] sm:h-[250px] md:h-[400px] lg:h-[180px]">
+                              <div className="lg:max-w-56 w-full">
                                 <img
                                   src={
                                     festival.image && festival.image !== "N/A"
@@ -439,7 +439,7 @@ const EventSchedule = () => {
                                       : default_Img
                                   }
                                   alt={festival.programName}
-                                  className="w-full h-full object-cover border rounded-lg"
+                                  className="w-full h-auto object-cover border rounded-lg"
                                   loading="lazy"
                                   onError={handleImageError}
                                 />
