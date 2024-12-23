@@ -344,3 +344,15 @@
     min-height: 70px;
   }
 }
+
+/* 기존 CSS에 추가 */
+.react-chatbot-kit-chat-bot-message.loading {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.react-chatbot-kit-chat-bot-message.loading
+  .react-chatbot-kit-chat-bot-message-arrow {
+  display: none !important;
+}
