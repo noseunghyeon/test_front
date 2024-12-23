@@ -48,7 +48,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-start sm:items-center justify-center bg-gradient-to-tr from-blue-100 via-white to-white px-4 py-6 sm:px-6 mt-20 sm:mt-10">
+    <div className="min-h-[89vh] flex items-start sm:items-center justify-center bg-gradient-to-tr from-blue-100 via-white to-white px-4 py-6 sm:px-6 mt-20 sm:mt-10">
       <div className="w-full max-w-md space-y-6 p-6 sm:p-10 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-2xl">
         <div>
           <h2 className="mt-4 text-center text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-900 via-blue-600 to-blue-400 bg-clip-text text-transparent">
