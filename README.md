@@ -87,6 +87,39 @@ LINE 1: COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName
 ----------------------------------------------------------------
 ```
 
+## **EC2에서 Miniconda 확인하기 (1. myenv 확인, 2.Windows에서 Linux로 전환 체크)**
+
+     conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
+        *결과: myenv 생성*
+
+2. **라우팅 Linux화**:
+
+```
+    // Python 경로 및 스크립트 경로 설정
+    const pythonPath = path.join(
+      "/home/ubuntu/miniconda",
+      "envs",
+      "myenv",
+      "bin",
+      "python3"
+    );
+    const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
+    let answer = "";
+
+```
+
+_결과: chatbot 연결 확인_
+
+4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
+
+```
+    - name: Create Conda Environment
+  run: |
+    eval "$($HOME/miniconda/bin/conda shell.bash hook)"
+    conda create -n myenv python=3.12.7 || echo "Environment already exists."
+
+```
+
 ### **PostgreSQL CSV 데이터 삽입 문제 해결**
 
 1. **데이터베이스 연결 설정**:
@@ -125,39 +158,6 @@ finally:
 ```
 
 **문제해결**: CSV 파일의 인코딩을 'utf-8-sig'로 설정하고 데이터 타입 검증 후 성공적으로 삽입 완료
-
-## **EC2에서 Miniconda 확인하기 (1. myenv 확인, 2.Windows에서 Linux로 전환 체크)**
-
-     conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
-        *결과: myenv 생성*
-
-2. **라우팅 Linux화**:
-
-```
-    // Python 경로 및 스크립트 경로 설정
-    const pythonPath = path.join(
-      "/home/ubuntu/miniconda",
-      "envs",
-      "myenv",
-      "bin",
-      "python3"
-    );
-    const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
-    let answer = "";
-
-```
-
-_결과: chatbot 연결 확인_
-
-4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
-
-```
-    - name: Create Conda Environment
-  run: |
-    eval "$($HOME/miniconda/bin/conda shell.bash hook)"
-    conda create -n myenv python=3.12.7 || echo "Environment already exists."
-
-```
 
 ## 🦜 랭체인
 
