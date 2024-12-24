@@ -53,8 +53,8 @@
 # 터미널 열기(Command Prompt or PowerShell for Windows, Terminal for macOS or Linux)
 
 # Git 클론
-git clone <프론트엔드 리포지토리 링크> front
-git clone <백엔드 리포지토리 링크> back
+git clone <https://github.com/noseunghyeon/test_front.git/> front
+git clone <https://github.com/noseunghyeon/test_back.git/> back
 
 # back/front터미널 npm install
 cd front
