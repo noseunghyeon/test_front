@@ -47,7 +47,7 @@
 | **마이페이지**      | 사용자 관심 문화재 및 행사 목록 관리 | `FavoriteList.jsx`, `Mypage.jsx`, `favoriteSlice.js`, `PageModal.jsx`      |
 | **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`       |
 
-## 💻 개발환경 설정
+## 💻 개발환경설정
 
 ```shell
 # 터미널 열기(Command Prompt or PowerShell for Windows, Terminal for macOS or Linux)
@@ -64,19 +64,19 @@ npm install
 
 #posgresql 연결 확인 (.env체크)
 
-#conda 환경 체크
+#conda 환경 체크(requirements.txt 참조)
 
 conda create -n chat_env python=3.8 -y
 conda activate chat_env
 conda install pip
-            pip install -r requirements.txt
+pip install -r requirements.txt
 python -c "import openai; print('Environment is ready.')"
 
 # frontend backend 구동
 npm start
 ```
 
-## 📝 개발로그 (Development Log)
+## 📝 개발로그
 
 ## 노승현
 
