@@ -87,9 +87,10 @@ You can list all discoverable environments with `conda info --envs`.
     );
     const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
     let answer = "";
+
 ```
-`
-    *결과: chatbot 연결 확인*
+
+*결과: chatbot 연결 확인*
 
 4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
 ```
