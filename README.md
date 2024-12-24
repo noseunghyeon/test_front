@@ -37,14 +37,14 @@
 
 ## 🎓 구성
 
-| 기능                | 설명                                 | 주요 파일                                                                  |
-| ------------------- | ------------------------------------ | -------------------------------------------------------------------------- |
-| **홈**              | 메인 화면과 네비게이션 제공          | `Home.jsx`, `Header.jsx`, `Navbar.jsx`, `ImageSlider.css`, `store.js`      |
-| **챗봇**            | 문화재 관련 질문 응답 및 정보 제공   | `Chatbot.jsx`, `Chatbot.css`, `config.js`, `MessageParser.js`, `store.js`  |
-| **위치 검색**       | 사용자 위치 기반 문화재 및 행사 검색 | `Search.jsx`, `Map.jsx`, `Modal.jsx`, `heritageDetailSlice.js`, `store.js` |
-| **행사 일정**       | 행사 일정 관리 및 알림 제공          | `Event_schedule.jsx`, `EventModal.jsx`, `eventSlice.js`, `apiUrl.js`       |
-| **마이페이지**      | 사용자 관심 문화재 및 행사 목록 관리 | `FavoriteList.jsx`, `Mypage.jsx`, `favoriteSlice.js`, `PageModal.jsx`      |
-| **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`       |
+| 기능                | 설명                                 | 주요 파일                                                                     |
+| ------------------- | ------------------------------------ | ----------------------------------------------------------------------------- |
+| **홈**              | 메인 화면과 네비게이션 제공          | `Home.jsx`, `Header.jsx`, `Navbar.jsx`, `ImageSlider.css`, `store.js`         |
+| **챗봇**            | 문화재 관련 질문 응답 및 정보 제공   | `Chatbot.jsx`, `Chatbot.css`, `config.js`, `MessageParser.js`, `store.js`     |
+| **위치 검색**       | 사용자 위치 기반 문화재 및 행사 검색 | `Search.jsx`, `Map.jsx`, `Modal.jsx`, `heritageDetailSlice.js`, `store.js`    |
+| **행사 일정**       | 행사 일정 관리 및 알림 제공          | `Event_schedule.jsx`, `EventModal.jsx`, `festivalDetailSlice.js`, `apiUrl.js` |
+| **마이페이지**      | 사용자 관심 문화재 및 행사 목록 관리 | `FavoriteList.jsx`, `Mypage.jsx`, `favoriteSlice.js`, `PageModal.jsx`         |
+| **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`          |
 
 ## 💻 개발환경설정
 
