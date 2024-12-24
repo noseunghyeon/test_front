@@ -129,10 +129,7 @@ import psycopg2
 
 # PostgreSQL 연결
 conn = psycopg2.connect(
-    host='18.215.178.98',
-    database='postgres',
-    user='postgres',
-    password='aicc4pgpg'
+
 )
 cur = conn.cursor()
 ```
