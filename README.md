@@ -66,12 +66,12 @@ npm install
 
 #posgresql 연결 확인 (.env체크)
 
-#conda 환경 체크
+#conda 환경 체크(requirements.txt 참조)
 
 conda create -n chat_env python=3.8 -y
 conda activate chat_env
 conda install pip
-            pip install -r requirements.txt
+pip install -r requirements.txt
 python -c "import openai; print('Environment is ready.')"
 
 # frontend backend 구동
