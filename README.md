@@ -1,5 +1,6 @@
 <a name="top"></a>
 [![Legacy project](/legacyprjt-main.png)](https://test-front-lovat.vercel.app)
+
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&logoColor=white&style=flat)
 ![Python Badge](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white&style=flat)
 ![OS](https://img.shields.io/badge/OS-ubuntu%2C%20windows-0078D4)
@@ -30,10 +31,9 @@
 
 - **구글 맵 지원**:사용자 위치 기반 문화재 정보 제공
 - **챗봇**: - 사용자 질문에 실시간으로 응답하고, 관심 있는 문화재 정보를 제공,
-  문화재 검색 및 행사 일정 알려줌
-- **데이터관리**: 문화재 및 행사 데이터의 효율적 저장 postgresql 사용관리
+  문화재 검색 및 행사 일정 알림
+- **데이터관리**: 문화재 및 행사 데이터의 효율적 저장 및 업데이트
 - **유지보수**: 시스템 안정성 확보 및 정기적 업데이트를 통한 최적화
-  /기능추가
 
 ## 🎓 구성
 
@@ -51,7 +51,6 @@
 ## 📚 디버깅로그
 
 ```
-문제발생
 (python 환경)
 2024-12-24 11:58:33.085 [info] [Info  - 11:58:33 AM] (7832) Assuming Python version 3.12.7.final.0
 2024-12-24 11:58:33.426 [info] [Error - 11:58:33 AM] (7832) File or directory "<default workspace root>" does not exist.
@@ -67,6 +66,15 @@ EnvironmentNameNotFound: Could not find conda environment: myenv
 You can list all discoverable environments with `conda info --envs`.
 ----------------------------------------------------------------
 ```
+
+## **EC2에서 Miniconda 확인하기 (1. myenv 확인, 2.Windows에서 Linux로 전환 체크)**
+
+1. **Miniconda 환경설정**:
+   - SSH를 통해 EC2 서버에 접속 후 다음 명령 실행:
+     conda info --envs
+     _결과: 없음_
+
+<<<<<<< HEAD
 
 ```
 문제발생
@@ -120,47 +128,38 @@ finally:
 
 ## **EC2에서 Miniconda 확인하기 (1. myenv 확인, 2.Windows에서 Linux로 전환 체크)**
 
-1.  **Miniconda 환경설정**:
+     conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
+        *결과: myenv 생성*
 
-    - SSH를 통해 EC2 서버에 접속 후 다음 명령 실행:
-      conda info --envs \*결과: 없음
-
-      conda create -n myenv python=3.12.7 (나중에는 워크플로 수정) \*결과: myenv 생성
-
-2.  \*\* 라우팅 Linux화
-    // Python 경로 및 스크립트 경로 설정
-    const pythonPath = path.join(
-    "/home/ubuntu/miniconda",
-    "envs",
-    "myenv",
-    "bin",
-    "python3"
-    );
-    const scriptPath = path.join(\_\_dirname, "chatbot", "chatbot.py");
-
-        let answer = "";
-
-        *결과: chatbot 연결 확인
-
-        **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가
+2. ** 라우팅 Linux화**:
 
 ```
-        - name: Create Conda Environment
-      run: |
-        eval "$($HOME/miniconda/bin/conda shell.bash hook)"
-        conda create -n myenv python=3.12.7 || echo "Environment already exists."
+    // Python 경로 및 스크립트 경로 설정
+    const pythonPath = path.join(
+      "/home/ubuntu/miniconda",
+      "envs",
+      "myenv",
+      "bin",
+      "python3"
+    );
+    const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
+    let answer = "";
+```
+
+`
+_결과: chatbot 연결 확인_
+
+4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
+
+```
+    - name: Create Conda Environment
+  run: |
+    eval "$($HOME/miniconda/bin/conda shell.bash hook)"
+    conda create -n myenv python=3.12.7 || echo "Environment already exists."
+
 ```
 
 ## 🦜 랭체인
-
-```
-rag_chain = (
-    {"context": retriever, "question": RunnablePassthrough()}
-    | prompt
-    | llm
-    | StrOutputParser()
-)
-```
 
 ## 📃 자료
 
