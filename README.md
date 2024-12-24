@@ -74,8 +74,6 @@ You can list all discoverable environments with `conda info --envs`.
      conda info --envs
      _결과: 없음_
 
-<<<<<<< HEAD
-
 ```
 문제발생
 (python 환경)
@@ -95,17 +93,16 @@ LINE 1: COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName
 2. **라우팅 Linux화**:
 
 ```javascript
-    // Python 경로 및 스크립트 경로 설정
-    const pythonPath = path.join(
-      "/home/ubuntu/miniconda",
-      "envs",
-      "myenv",
-      "bin",
-      "python3"
-    );
-    const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
-    let answer = "";
-
+// Python 경로 및 스크립트 경로 설정
+const pythonPath = path.join(
+  "/home/ubuntu/miniconda",
+  "envs",
+  "myenv",
+  "bin",
+  "python3"
+);
+const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
+let answer = "";
 ```
 
 _결과: chatbot 연결 확인_
