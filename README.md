@@ -131,7 +131,7 @@ finally:
      conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
         *결과: myenv 생성*
 
-2. ** 라우팅 Linux화**:
+2. **라우팅 Linux화**:
 
 ```
     // Python 경로 및 스크립트 경로 설정
