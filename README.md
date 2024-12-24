@@ -83,7 +83,7 @@ You can list all discoverable environments with `conda info --envs`.
 ----------------------------------------------------------------
 (PostgreSQL 데이터 삽입 오류)
 psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer
-LINE 1: COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLc...
+LINE 1: COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName,content,imageUrl)
 ----------------------------------------------------------------
 ```
 
@@ -144,10 +144,16 @@ finally:
     );
     const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
     let answer = "";
+
 ```
 
+<<<<<<< HEAD
 `
 _결과: chatbot 연결 확인_
+=======
+_결과: chatbot 연결 확인_
+
+> > > > > > > b0c691724b53baa9373aa270154eeef67c17deaa
 
 4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
 
