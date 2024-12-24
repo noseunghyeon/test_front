@@ -58,7 +58,7 @@ const SearchPage = () => {
       setIsLoading(true);
       try {
         const response = await axios.get(
-          "http://localhost:8000/pgdb/heritage",
+          "https://back.seunghyeon.site/pgdb/heritage",
           {
             signal: controller.signal,
           }
@@ -92,7 +92,7 @@ const SearchPage = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:8000/pgdb/favoritelist",
+        "https://back.seunghyeon.site/pgdb/favoritelist",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -215,14 +215,14 @@ const SearchPage = () => {
     try {
       if (!isCurrentlyFavorite) {
         await axios.post(
-          "http://localhost:8000/pgdb/favoritelist",
+          "https://back.seunghyeon.site/pgdb/favoritelist",
           { id: heritage.heritageid, type: "heritage" },
           { headers: { Authorization: `Bearer ${token}` } }
         );
         dispatch(addFavorite({ type: "heritage", data: heritage }));
         setAlertMessage("즐겨찾기에 추가되었습니다.");
       } else {
-        await axios.delete("http://localhost:8000/pgdb/favoritelist", {
+        await axios.delete("https://back.seunghyeon.site/pgdb/favoritelist", {
           headers: { Authorization: `Bearer ${token}` },
           data: { id: heritage.heritageid, type: "heritage" },
         });
