@@ -19,6 +19,7 @@
 
 - [설명](#-설명)
 - [구성](#-구성)
+- [개발환경](#-개발환경설정)
 - [개발로그](#-개발로그)
 - [디버깅로그](#-디버깅로그)
 - [랭체인구성](#-랭체인)
@@ -35,6 +36,8 @@
 - **데이터관리**: 문화재 및 행사 데이터의 효율적 저장 및 업데이트
 - **유지보수**: 시스템 안정성 확보 및 정기적 업데이트를 통한 최적화
 
+
+
 ## 🎓 구성
 
 | 기능                | 설명                                 | 주요 파일                                                                  |
@@ -45,6 +48,35 @@
 | **행사 일정**       | 행사 일정 관리 및 알림 제공          | `Event_schedule.jsx`, `EventModal.jsx`, `eventSlice.js`, `apiUrl.js`       |
 | **마이페이지**      | 사용자 관심 문화재 및 행사 목록 관리 | `FavoriteList.jsx`, `Mypage.jsx`, `favoriteSlice.js`, `PageModal.jsx`      |
 | **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`       |
+
+## 💻 개발환경 설정
+
+```shell
+# 터미널 열기(Command Prompt or PowerShell for Windows, Terminal for macOS or Linux)
+
+# Git 클론
+git clone <프론트엔드 리포지토리 링크> front
+git clone <백엔드 리포지토리 링크> back
+
+# back/front터미널 npm install
+cd front
+npm install
+cd back
+npm install
+
+#posgresql 연결 확인 (.env체크)
+
+#conda 환경 체크
+
+conda create -n chat_env python=3.8 -y
+conda activate chat_env
+conda install pip
+            pip install -r requirements.txt
+python -c "import openai; print('Environment is ready.')"
+
+# frontend backend 구동
+npm start
+```
 
 ## 📝 개발로그 (Development Log)
 
