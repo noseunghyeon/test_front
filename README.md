@@ -231,6 +231,42 @@ npm start
 
 ## 📚 디버깅로그
 
+### **PostgreSQL CSV 데이터 삽입 문제 해결**
+
+1. **데이터베이스 연결 설정**:
+
+```python
+import psycopg2
+
+# PostgreSQL 연결
+conn = psycopg2.connect(
+
+)
+cur = conn.cursor()
+```
+
+2. **CSV 파일 데이터 삽입**:
+
+```python
+# CSV 파일 직접 삽입
+try:
+    with open("heritageList.csv", "r", encoding="utf-8-sig") as f:
+        cur.copy_expert("""
+            COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName,content,imageUrl)
+            FROM STDIN WITH CSV HEADER
+        """, f)
+    conn.commit()
+    print("Data inserted successfully using COPY!")
+except Exception as e:
+    conn.rollback()
+    print("Error:", e)
+finally:
+    cur.close()
+    conn.close()
+```
+
+**문제해결**: CSV 파일의 인코딩을 'utf-8-sig'로 설정하고 데이터 타입 검증 후 성공적으로 삽입 완료
+
 ## 🦜 랭체인
 
 ## 📃 자료
