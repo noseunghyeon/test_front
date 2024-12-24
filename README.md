@@ -147,13 +147,7 @@ finally:
 
 ```
 
-<<<<<<< HEAD
-`
 _결과: chatbot 연결 확인_
-=======
-_결과: chatbot 연결 확인_
-
-> > > > > > > b0c691724b53baa9373aa270154eeef67c17deaa
 
 4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
 
