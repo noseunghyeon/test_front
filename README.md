@@ -124,7 +124,3 @@ Legacy Project와 관련된 문의, 서비스, 정보에 대해 더 알고 싶�
 
 [Back to top](#top)
 
-```
-
-```
-
