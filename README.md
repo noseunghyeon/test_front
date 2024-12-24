@@ -47,7 +47,7 @@
 | **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`       |
 
 
-## 📝 개발
+## 📝 개발로그
 
 ## 📚 디버깅로그
 ```
@@ -70,10 +70,10 @@ You can list all discoverable environments with `conda info --envs`.
 1. **Miniconda 환경설정**:
    - SSH를 통해 EC2 서버에 접속 후 다음 명령 실행:
     conda info --envs
-        *결과: 없음
+       *결과: 없음*
 
      conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
-        *결과: myenv 생성
+        *결과: myenv 생성*
 
 2. ** 라우팅 Linux화**:
 ```
