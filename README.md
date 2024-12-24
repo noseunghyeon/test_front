@@ -340,6 +340,9 @@ finally:
 
 ## 📃 자료
 
+- [PPT자료](https://docs.google.com/presentation/d/1Ania46S7dpLR5hvHF7ibLA4QGbNxtqgE/edit#slide=id.g32084deacbf_3_863/)
+- [erd클라우드](https://www.erdcloud.com/d/x7FB5qMQ6fxk5oGMv/)
+
 ## 🗨️ 연락처
 
 Legacy Project와 관련된 문의, 서비스, 정보에 대해 더 알고 싶으시면 언제든지 저희에게 문의하세요. 지원을 제공하고 모든 질문에 답변드릴 준비가 되어 있습니다. 아래는 저희 팀과 연락할 수 있는 방법입니다:
