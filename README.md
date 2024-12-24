@@ -1,5 +1,6 @@
 <a name="top"></a>
 [![Legacy project](/legacyprjt-main.png)](https://test-front-lovat.vercel.app)
+
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&logoColor=white&style=flat)
 ![Python Badge](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white&style=flat)
 ![OS](https://img.shields.io/badge/OS-ubuntu%2C%20windows-0078D4)
@@ -46,7 +47,7 @@
 | **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`       |
 
 
-## 📝 개발로그
+## 📝 개발
 
 ## 📚 디버깅로그
 ```
@@ -74,8 +75,9 @@ You can list all discoverable environments with `conda info --envs`.
      conda create -n myenv python=3.12.7 (나중에는 워크플로 수정)
         *결과: myenv 생성
 
-2. ** 라우팅 Linux화
-        // Python 경로 및 스크립트 경로 설정
+2. ** 라우팅 Linux화**:
+```
+    // Python 경로 및 스크립트 경로 설정
     const pythonPath = path.join(
       "/home/ubuntu/miniconda",
       "envs",
@@ -84,12 +86,12 @@ You can list all discoverable environments with `conda info --envs`.
       "python3"
     );
     const scriptPath = path.join(__dirname, "chatbot", "chatbot.py");
-
     let answer = "";
+```
+`
+    *결과: chatbot 연결 확인*
 
-    *결과: chatbot 연결 확인
-
-    **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가
+4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
 ```
     - name: Create Conda Environment
   run: |
