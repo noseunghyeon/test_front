@@ -233,6 +233,8 @@ npm start
 
 ### **PostgreSQL CSV 데이터 삽입 문제 해결**
 
+### HeritageList 데이터 삽입
+
 1. **데이터베이스 연결 설정**:
 
 ```python
@@ -254,6 +256,75 @@ try:
         cur.copy_expert("""
             COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName,content,imageUrl)
             FROM STDIN WITH CSV HEADER
+        """, f)
+    conn.commit()
+    print("Data inserted successfully using COPY!")
+except Exception as e:
+    conn.rollback()
+    print("Error:", e)
+finally:
+    cur.close()
+    conn.close()
+```
+
+### FesitvalList 데이터 삽입
+
+```python
+import psycopg2
+
+# PostgreSQL 연결
+conn = psycopg2.connect(
+)
+cur = conn.cursor()
+
+# 기존 테이블 삭제 (있다면)
+try:
+    cur.execute("DROP TABLE IF EXISTS festivallist;")
+    conn.commit()
+except Exception as e:
+    conn.rollback()
+    print("Error dropping table:", e)
+
+# 새 테이블 생성
+try:
+    cur.execute("""
+        CREATE TABLE festivallist (
+            축제id SERIAL PRIMARY KEY,
+            seqNo INTEGER,
+            siteCode INTEGER,
+            subTitle VARCHAR(200),
+            subContent TEXT,
+            sDate DATE,
+            eDate DATE,
+            groupName VARCHAR(100),
+            contact VARCHAR(50),
+            subDesc VARCHAR(200),
+            subPath VARCHAR(200),
+            subDesc2 VARCHAR(100),
+            subDesc3 VARCHAR(100),
+            mainImageT TEXT,
+            sido VARCHAR(50),
+            gugun VARCHAR(50),
+            subDate VARCHAR(200),
+            eventName VARCHAR(200),
+            CATEGORY_NM VARCHAR(100),
+            URL VARCHAR(500),
+            imageUrl TEXT,
+            EVENT_TM_INFO VARCHAR(100)
+        );
+    """)
+    conn.commit()
+    print("Table created successfully!")
+except Exception as e:
+    conn.rollback()
+    print("Error creating table:", e)
+
+# CSV 파일 삽입
+try:
+    with open("events_data.csv", "r", encoding="utf-8-sig") as f:
+        cur.copy_expert("""
+            COPY festivallist (seqNo,siteCode,subTitle,subContent,sDate,eDate,groupName,contact,subDesc,subPath,subDesc2,subDesc3,mainImageT,sido,gugun,subDate,eventName,CATEGORY_NM,URL,imageUrl,EVENT_TM_INFO)
+            FROM STDIN WITH (FORMAT CSV, HEADER)
         """, f)
     conn.commit()
     print("Data inserted successfully using COPY!")
