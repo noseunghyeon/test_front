@@ -16,25 +16,28 @@
 
 ## 목차
 
-- [설명](#-설명)
-- [구성](#-구성)
-- [개발로그](#-개발로그)
-- [디버깅로그](#-디버깅로그)
-- [랭체인구성](#-랭체인)
-- [자료](#-자료)
-- [연락처](#%EF%B8%8F-연락처)
+- [소개](#-소개)
+- [주요 기능](#-주요-기능)
+- [시스템 구성](#-시스템-구성)
+- [개발 문서](#-개발-문서)
+  - [개발 로그](#-개발-로그)
+  - [디버깅 로그](#-디버깅-로그)
+  - [랭체인 구성](#-랭체인-구성)
+- [참고 자료](#-참고-자료)
+- [연락처](#-연락처)
 
-## ��️ 설명
+## 💡 소개
 
-**유산지기**: 국가 문화재,행사 알림 서비스
+**유산지기** - 국가 문화재 및 문화행사 통합 정보 플랫폼
 
-- **구글 맵 지원**:사용자 위치 기반 문화재 정보 제공
-- **챗봇**: - 사용자 질문에 실시간으로 응답하고, 관심 있는 문화재 정보를 제공,
-  문화재 검색 및 행사 일정 알림
-- **데이터관리**: 문화재 및 행사 데이터의 효율적 저장 및 업데이트
-- **유지보수**: 시스템 안정성 확보 및 정기적 업데이트를 통한 최적화
+주요 특징:
 
-## �� 구성
+- 위치 기반 문화재 정보 제공 (Google Maps API 연동)
+- AI 기반 문화재 정보 챗봇 서비스
+- 실시간 문화행사 알림 시스템
+- 개인화된 관심 문화재/행사 관리
+
+## 🚀 주요 기능
 
 | 기능                | 설명                                 | 주요 파일                                                                  |
 | ------------------- | ------------------------------------ | -------------------------------------------------------------------------- |
@@ -45,65 +48,32 @@
 | **마이페이지**      | 사용자 관심 문화재 및 행사 목록 관리 | `FavoriteList.jsx`, `Mypage.jsx`, `favoriteSlice.js`, `PageModal.jsx`      |
 | **로그인/회원가입** | 사용자 인증 및 계정 관리             | `useAuth.js`, `authSlice.js`, `Login.jsx`, `Signup.jsx`, `apiUrl.js`       |
 
-## �� 개발로그
+## 📝 개발 문서
 
-## �� 디버깅로그
+### 개발 로그
 
-```
-(python 환경)
-2024-12-24 11:58:33.085 [info] [Info  - 11:58:33 AM] (7832) Assuming Python version 3.12.7.final.0
-2024-12-24 11:58:33.426 [info] [Error - 11:58:33 AM] (7832) File or directory "<default workspace root>" does not exist.
-2024-12-24 11:58:33.426 [info] [Info  - 11:58:33 AM] (7832) No source files found.
-----------------------------------------------------------------
-(github action)
-Run eval "$($HOME/miniconda/bin/conda shell.bash hook)"
-  eval "$($HOME/miniconda/bin/conda shell.bash hook)"
-  conda activate myenv
-  if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-  shell: /usr/bin/bash -e {0}
-EnvironmentNameNotFound: Could not find conda environment: myenv
-You can list all discoverable environments with `conda info --envs`.
-----------------------------------------------------------------
+[개발 로그 내용 추가 필요]
+
+### 디버깅 로그
+
+```bash
+# 환경 설정 관련 주요 이슈 해결 내역
+[Python 환경 설정]
+- 이슈: Python 버전 및 환경 감지 문제
+- 해결: Miniconda 환경 구성 및 Python 3.12.7 설정
+
+[Github Actions CI/CD]
+- 이슈: conda 환경 'myenv' 미감지
+- 해결: workflow에 환경 생성 단계 추가
 ```
 
-## **EC2에서 Miniconda 확인하기 (1. myenv 확인, 2.Windows에서 Linux로 전환 체크)**
+### 랭체인 구성
 
-1.  **Miniconda 환경설정**:
+[랭체인 구성 내용 추가 필요]
 
-    - SSH를 통해 EC2 서버에 접속 후 다음 명령 실행:
-      conda info --envs \*결과: 없음
+## 참고 자료
 
-      conda create -n myenv python=3.12.7 (나중에는 워크플로 수정) \*결과: myenv 생성
-
-2.  \*\* 라우팅 Linux화
-    // Python 경로 및 스크립트 경로 설정
-    const pythonPath = path.join(
-    "/home/ubuntu/miniconda",
-    "envs",
-    "myenv",
-    "bin",
-    "python3"
-    );
-    const scriptPath = path.join(\_\_dirname, "chatbot", "chatbot.py");
-
-        let answer = "";
-
-        *결과: chatbot 연결 확인
-
-        **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가
-
-```
-        - name: Create Conda Environment
-      run: |
-        eval "$($HOME/miniconda/bin/conda shell.bash hook)"
-        conda create -n myenv python=3.12.7 || echo "Environment already exists."
-```
-
-## �� 랭체인
-
-## �� 자료
-
-## ��️ 연락처
+## 연락처
 
 Legacy Project와 관련된 문의, 서비스, 정보에 대해 더 알고 싶으시면 언제든지 저희에게 문의하세요. 지원을 제공하고 모든 질문에 답변드릴 준비가 되어 있습니다. 아래는 저희 팀과 연락할 수 있는 방법입니다:
 
