@@ -79,6 +79,7 @@ const EventSchedule = () => {
 
   const handleSearchChange = useCallback((e) => {
     setSearch(e.target.value);
+    setCurrentPage(1);
   }, []);
 
   const handleRegionSelect = useCallback((region) => {
@@ -276,13 +277,13 @@ const EventSchedule = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row sm:justify-between">
-          <div className="w-full sm:w-1/2 mb-4 flex justify-start">
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center mb-6">
+          <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
             <p className="SubFont text-2xl">
               Total: {formattedFestivals.length}건
             </p>
           </div>
-          <div className="w-full sm:w-1/3 mb-4 sm:ml-auto">
+          <div className="w-full sm:w-1/2 lg:w-1/3">
             <SearchBar value={search} onChange={handleSearchChange} />
           </div>
         </div>
