@@ -94,7 +94,7 @@ LINE 1: COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName
 
 2. **라우팅 Linux화**:
 
-```
+```javascript
     // Python 경로 및 스크립트 경로 설정
     const pythonPath = path.join(
       "/home/ubuntu/miniconda",
@@ -112,7 +112,7 @@ _결과: chatbot 연결 확인_
 
 4. **문제해결: 다른환경에도 작동하게 Github Actions yml 에 myenv 생성 명령어 추가**
 
-```
+```yaml
     - name: Create Conda Environment
   run: |
     eval "$($HOME/miniconda/bin/conda shell.bash hook)"
