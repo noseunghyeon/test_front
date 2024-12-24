@@ -68,6 +68,56 @@ You can list all discoverable environments with `conda info --envs`.
 ----------------------------------------------------------------
 ```
 
+```
+문제발생
+(python 환경)
+// ... existing error logs ...
+----------------------------------------------------------------
+(PostgreSQL 데이터 삽입 오류)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer
+LINE 1: COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLc...
+----------------------------------------------------------------
+```
+
+### **PostgreSQL CSV 데이터 삽입 문제 해결**
+
+1. **데이터베이스 연결 설정**:
+
+```python
+import psycopg2
+
+# PostgreSQL 연결
+conn = psycopg2.connect(
+    host='18.215.178.98',
+    database='postgres',
+    user='postgres',
+    password='aicc4pgpg'
+)
+cur = conn.cursor()
+```
+
+2. **CSV 파일 데이터 삽입**:
+
+```python
+# CSV 파일 직접 삽입
+try:
+    with open("heritageList.csv", "r", encoding="utf-8-sig") as f:
+        cur.copy_expert("""
+            COPY heritageList (ccbaKdcd,ccbaAsno,ccbaCtcd,ccbaMnm1,ccbaLcad,ccceName,content,imageUrl)
+            FROM STDIN WITH CSV HEADER
+        """, f)
+    conn.commit()
+    print("Data inserted successfully using COPY!")
+except Exception as e:
+    conn.rollback()
+    print("Error:", e)
+finally:
+    cur.close()
+    conn.close()
+```
+
+**문제해결**: CSV 파일의 인코딩을 'utf-8-sig'로 설정하고 데이터 타입 검증 후 성공적으로 삽입 완료
+
 ## **EC2에서 Miniconda 확인하기 (1. myenv 확인, 2.Windows에서 Linux로 전환 체크)**
 
 1.  **Miniconda 환경설정**:
@@ -123,4 +173,3 @@ Legacy Project와 관련된 문의, 서비스, 정보에 대해 더 알고 싶�
 - **기타문의**: 카카오 플러스
 
 [Back to top](#top)
-
