@@ -344,7 +344,7 @@ finally:
 
 Legacy Project와 관련된 문의, 서비스, 정보에 대해 더 알고 싶으시면 언제든지 저희에게 문의하세요. 지원을 제공하고 모든 질문에 답변드릴 준비가 되어 있습니다. 아래는 저희 팀과 연락할 수 있는 방법입니다:
 
-- **이메일**: 문의/지원 [support@legacy.com](mailto:support@legacy.com).
+- **이메일**: 문의/지원 [support@legacy.com](mailto:qkrwns982@gmail.com).
 - **웹사이트**: 유산사이트(https://test-front-lovat.vercel.app).
 - **기타문의**: 카카오 플러스
 
