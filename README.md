@@ -106,9 +106,10 @@ npm start
 ## 박준호
 
 ### 2024-11-27
+
 - Backend 개발용 엔드포인트 작성
   - 외부 API 활용 개발용 엔드포인트 작성
-    
+
 ### 2024-12-03
 
 - Backend 외부 API 연동 완료
@@ -337,7 +338,7 @@ finally:
 
 ## 📃 자료
 
-- [PPT자료](https://docs.google.com/presentation/d/1Ania46S7dpLR5hvHF7ibLA4QGbNxtqgE/edit#slide=id.g32084deacbf_3_863/)
+- [PPT자료](https://docs.google.com/presentation/d/1z1F5agoIWRG3_6Eu2e_1HxNNaPSOq3K4/edit#slide=id.p1)
 - [erd클라우드](https://www.erdcloud.com/d/x7FB5qMQ6fxk5oGMv/)
 
 ## 🗨️ 연락처
